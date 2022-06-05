@@ -29,6 +29,11 @@ type Index struct {
 	DatesLocations map[string][]string `json:"datesLocations"`
 }
 
+type ArtOutput struct {
+	A ArtistData
+	R Index
+}
+
 var SearchArtist struct {
 	Artists   []ArtistData
 	Relations []Index `json:"index"`

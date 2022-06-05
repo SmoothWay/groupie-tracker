@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" href="../static/favicon.png">
+    <title>Artist</title>
+</head>
+<body>
+    <div class="mainBlock">
+        <div class="L">
+            <img src="{{.A.Image}}" alt="">
+            <p class = "pName">{{.A.Name}}</p>
+            <div class="back"> <button onclick="window.location.href = '/';" class = "btn-back" >Back</button></div>
+        </div>
+        <div class="R">
+            <p  class = "p">Members :</p>
+            {{range .A.Members}}
+            <p>{{.}}</p>
+            {{end}}
+            <p  class = "p">CreationDate :</p>
+            <p>{{.A.CreationDate}}</p>
+            <p  class = "p">FirstAlbum :</p>
+            <p>{{.A.FirstAlbum}}</p>
+            <p  class = "p">DatesLocations:</p>
+            {{ range $key, $value := .R.DatesLocations }}
+            <ul>
+                <strong  class = "pDl">{{ $key }}:</strong>
+                {{ range $value }}
+                <li> {{ . }}</li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </div>
+
+    </div>
+</body>
+</html>

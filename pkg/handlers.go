@@ -3,7 +3,7 @@ package groupie
 import (
 	"log"
 	"net/http"
-	"path"
+	"strconv"
 )
 
 func HomePage(w http.ResponseWriter, r *http.Request) {
@@ -23,5 +23,28 @@ func HomePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func ArtistPage(w http.ResponseWriter, r *http.Request) {
-	log.Println(path.Base(r.RequestURI))
+	id, err := strconv.Atoi(r.RequestURI[9:])
+
+	if id < 1 || id > 52 {
+		w.WriteHeader(404)
+		Templates.ExecuteTemplate(w, "error.html", http.StatusNotFound)
+		log.Println("Status: 404 Page not Found")
+		return
+	}
+	if err != nil {
+		w.WriteHeader(400)
+		Templates.ExecuteTemplate(w, "error.html", http.StatusBadRequest)
+		log.Println("Status: Bad Request (400)")
+		return
+	}
+	if r.Method != http.MethodGet {
+		w.WriteHeader(405)
+		Templates.ExecuteTemplate(w, "error.html", http.StatusMethodNotAllowed)
+		log.Printf("Status: 405. %v Method is Not Allowed", r.Method)
+		return
+	}
+	res := &ArtOutput{}
+	res.A = SearchArtist.Artists[id-1]
+	res.R = SearchArtist.Relations[id-1]
+	Templates.ExecuteTemplate(w, "artist.html", res)
 }
