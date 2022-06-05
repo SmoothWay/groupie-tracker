@@ -1,0 +1,8 @@
+.mainBlock{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
