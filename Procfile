@@ -1,1 +1,1 @@
-web: go run ./cmd/
+web: bin/groupie-tracker
