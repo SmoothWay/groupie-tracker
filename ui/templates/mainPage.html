@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="icon" href="../static/favicon.png">
-    <title>Groupie</title>
+    <link rel="stylesheet" href="../static/mainPage.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon-32x32.png">
+    <title>Groupie-Tracker</title>
 </head>
 <body>
     <div class="mainBlock">
-
         {{range .Artists}}
         <div class="Icon">
-            <a href="artists/{{.ID}}"><img src="{{.Image}}" alt=""></a>
-            <p>{{.Name}}</p>
+            <a href="artists/{{.ID}}"><img src="{{.Image}}" alt=""></a> 
+            <p><h3>{{.Name}}</h3></p>
         </div>
         {{end}}
+
     </div>
 </body>
 </html>

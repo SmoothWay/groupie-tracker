@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/artPage.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon-32x32.png">
+    <title>Groupie-Tracker</title>
+</head>
+<body>
+    <div id="homePage"> <a href="/"><img src="../static/logo.png"></a> </div>
+    <div class="mainBlock">
+        <div class="head">
+            <img src="{{.Art.Image}}" alt="">
+            <p class = "ArtName">{{.Art.Name}}</p>
+        </div>
+        <div class="desc">
+            <p class="p">Members:</p>
+            {{range .Art.Members}}
+            <p>{{.}}</p>
+            {{end}}
+            <p class="p">Creation Date:</p>
+            <p> {{.Art.CreationDate}}</p>
+            <p class="p">FirstAlbum:</p>
+            <p> {{.Art.FirstAlbum}} </p>
+            <p class="p">DatesLocations:</p>
+            {{ range $key, $value := .Rel.DatesLocations }} 
+            <ul>
+                <strong class="loc">{{ $key }}:</strong>
+                {{ range $value }}
+                <li> {{.}} </li>
+                {{end}}
+            </ul>
+            {{end}}
+        </div>
+</body>
+</html>

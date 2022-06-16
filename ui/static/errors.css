@@ -2,13 +2,14 @@ p{
     color: orange;
 }
 a{
-    font-size: 30px;
-    color: rgb(175, 175, 175);
+    font-size: 50px;
+    color: rgb(37, 35, 35);
 }
+
 body {
-    background-color: black;
+    background-size: 4500px 2500px;
     text-align: center;
     position: relative;
     font-family: monospace;
-    font-size: 50px;
+    font-size: 90px;
 }
