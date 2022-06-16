@@ -3,7 +3,6 @@ package groupie
 import "html/template"
 
 const (
-	PORT   = "8080"
 	UrlArt = "https://groupietrackers.herokuapp.com/api/artists"
 	UrlRel = "https://groupietrackers.herokuapp.com/api/relation"
 )
