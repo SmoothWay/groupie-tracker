@@ -1,1 +1,1 @@
-web:cmd/main.go
+web:groupie-tracker/cmd/main.go
