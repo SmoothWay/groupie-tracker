@@ -3,7 +3,7 @@ p{
 }
 a{
     font-size: 50px;
-    color: rgb(37, 35, 35);
+    color: rgb(170, 155, 73);
 }
 
 body {
@@ -12,4 +12,5 @@ body {
     position: relative;
     font-family: monospace;
     font-size: 90px;
+    background-image: url(img.jpg);
 }

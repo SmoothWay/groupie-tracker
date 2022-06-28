@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"io/ioutil"
 	"net/http"
 	"runtime/debug"
@@ -57,14 +58,25 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, name stri
 	buf.WriteTo(w)
 }
 
+func (app *application) execTemp(w http.ResponseWriter, status int) {
+	templates, templErr := template.ParseFiles("./ui/templates/errors.html")
+	if templErr != nil {
+		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		app.errorLog.Fatal(templErr)
+	}
+	templates.Execute(w, status)
+}
+
 func (app *application) serverError(w http.ResponseWriter, err error) {
 	trace := fmt.Sprintf("%s\n%s", err.Error(), debug.Stack())
 	app.errorLog.Println(trace)
-	http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+	w.WriteHeader(http.StatusInternalServerError)
+	app.execTemp(w, http.StatusInternalServerError)
 }
 
 func (app *application) clientError(w http.ResponseWriter, status int) {
-	http.Error(w, http.StatusText(status), status)
+	w.WriteHeader(status)
+	app.execTemp(w, status)
 }
 
 func (app *application) notFound(w http.ResponseWriter) {
