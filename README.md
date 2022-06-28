@@ -7,7 +7,6 @@ Clone this repository to your local machine. `cd groupie-tracker` and type `go r
 Example: `go run ./cmd/web -addr=:4000`. After you can visit `http://localhost:$PORT`.
 
 ## Implementation  
-There is [API](https://groupietrackers.herokuapp.com/api), which is parsed with json.Unmarshal and stored in Struct variable. Then content off that struct  
-variable (artist's names and images) are printed on home page. Images are links as well. After user click on image, depending on image's id, that artist's  
-page will be loaded. All of this information are printed via html templating. Project contains middleware for logging, panic recover and to set secure headers  
-which are called on every request.
+There is [API](https://groupietrackers.herokuapp.com/api), which is parsed with json.Unmarshal and stored in Struct variable. Then content off that struct 
+variable (artist's names and images) are printed on home page. Images are links as well. After user click on image, depending on image's id, that artist's 
+page will be loaded. All of this information are printed via html templating. Project contains middleware for logging, panic recover and to set secure headers which are called on every request.
