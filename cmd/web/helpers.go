@@ -11,17 +11,20 @@ import (
 )
 
 func Unmarshal(s string, a interface{}) error {
-	dataArt, err1 := http.Get(s)
-	if err1 != nil {
-		fmt.Println("No response from request")
+	dataArt, err := http.Get(s)
+	if err != nil {
+		return err
 	}
 	defer dataArt.Body.Close()
-	body, err := ioutil.ReadAll(dataArt.Body) // response body is []byte
-	err2 := json.Unmarshal(body, a)
-	if err2 != nil { // Parse []byte to go struct pointer
-		fmt.Println("Can not unmarshal JSON")
+	body, err := ioutil.ReadAll(dataArt.Body)
+	if err != nil {
+		return err
 	}
-	return err
+	err2 := json.Unmarshal(body, a)
+	if err2 != nil {
+		return err
+	}
+	return nil
 }
 
 func isValid(n int) bool {

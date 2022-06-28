@@ -34,11 +34,15 @@ func main() {
 		templateCache: tempalteCache,
 	}
 
-	infoLog.Printf("Starting server on %s\n", *addr)
-	err1 := Unmarshal(groupie.UrlArt, &groupie.SearchArtist.Artists)
-	err2 := Unmarshal(groupie.UrlRel, &groupie.SearchArtist)
-	if err1 != nil || err2 != nil {
-		errorLog.Fatal("Cannot Unmarshal JSON")
+	infoLog.Printf("Starting server on http://localhost%s\n", *addr)
+	err = Unmarshal(groupie.UrlArt, &groupie.SearchArtist.Artists)
+
+	if err != nil {
+		errorLog.Fatal(err)
+	}
+	err = Unmarshal(groupie.UrlRel, &groupie.SearchArtist)
+	if err != nil {
+		errorLog.Fatal(err)
 	}
 
 	srv := &http.Server{
