@@ -1,0 +1,17 @@
+{{template "base" .}}
+
+{{define "title"}}Home{{end}}
+{{define "style"}}
+<link rel="stylesheet" href="../static/mainPage.css">
+{{end}}
+{{define "body"}}
+    <div class="mainBlock">
+        {{range .Data.Artists}}
+        <div class="Icon">
+            <a href="artists?id={{.ID}}"><img src="{{.Image}}"></a> 
+            <p><h3>{{.Name}}</h3></p>
+        </div>
+        {{end}}
+
+    </div>
+{{end}}

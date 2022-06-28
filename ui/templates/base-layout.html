@@ -1,0 +1,19 @@
+{{define "base"}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{template "title" .}} - Groupie-Tracker</title>
+    {{template "style" .}}
+    <!-- <link rel="stylesheet" href="../static/mainPage.css"> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon-32x32.png">
+</head>
+<body>
+    <section>
+        {{template "body" . }}
+    </section>
+    {{template "footer" .}}
+</body>
+</html>
+{{end}}

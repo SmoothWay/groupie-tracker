@@ -1,13 +1,9 @@
 package groupie
 
-import "html/template"
-
 const (
 	UrlArt = "https://groupietrackers.herokuapp.com/api/artists"
 	UrlRel = "https://groupietrackers.herokuapp.com/api/relation"
 )
-
-var Templates, TempErr = template.ParseGlob("./ui/templates/*.html")
 
 type DataArt struct {
 	ID             int                 `json:"id"`
@@ -18,8 +14,7 @@ type DataArt struct {
 	FirstAlbum     string              `json:"firstAlbum"`
 	Locations      string              `json:"locations"`
 	DatesLocations map[string][]string `json:"datesLocations"`
-
-	ConcertDates string `json:"concertDates"`
+	ConcertDates   string              `json:"concertDates"`
 }
 
 type Index struct {

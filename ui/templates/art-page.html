@@ -1,0 +1,33 @@
+{{template "base" .}}
+
+{{define "title"}}Artists{{end}}
+{{define "style"}}
+<link rel="stylesheet" href="../static/artPage.css">
+{{end}}
+{{define "body"}}
+    <div id="homePage"> <a href="/"><img src="../static/logo.png"></a> </div>
+    <div class="mainBlock">
+        <div class="head">
+            <img src="{{.Page.Art.Image}}" alt="">
+            <p class = "ArtName">{{.Page.Art.Name}}</p>
+        </div>
+        <div class="desc">
+            <p class="p">Members:</p>
+            {{range .Page.Art.Members}}
+            <p>{{.}}</p>
+            {{end}}
+            <p class="p">Creation Date:</p>
+            <p> {{.Page.Art.CreationDate}}</p>
+            <p class="p">FirstAlbum:</p>
+            <p> {{.Page.Art.FirstAlbum}} </p>
+            <p class="p">DatesLocations:</p>
+            {{ range $key, $value := .Page.Rel.DatesLocations }} 
+            <ul>
+                <strong class="loc">{{ $key }}:</strong>
+                {{ range $value }}
+                <li> {{.}} </li>
+                {{end}}
+            </ul>
+            {{end}}
+        </div>
+{{end}}
