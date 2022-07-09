@@ -2,14 +2,14 @@
 
 {{define "title"}}Artists{{end}}
 {{define "style"}}
-<link rel="stylesheet" href="../static/artPage.css">
+<link rel="stylesheet" href="../static/css/artPage.css">
 {{end}}
 {{define "body"}}
-    <div id="homePage"> <a href="/"><img src="../static/logo.png"></a> </div>
-    <div class="mainBlock">
+    <div id="homePage"> <a href="/"><img src="../static/img/logo.png"></a> </div>
+    <div class="artblock">
         <div class="head">
             <img src="{{.Page.Art.Image}}" alt="">
-            <p class = "ArtName">{{.Page.Art.Name}}</p>
+            <p class = "artName">{{.Page.Art.Name}}</p>
         </div>
         <div class="desc">
             <p class="p">Members:</p>
@@ -30,4 +30,5 @@
             </ul>
             {{end}}
         </div>
+    </div>
 {{end}}

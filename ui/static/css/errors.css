@@ -12,5 +12,5 @@ body {
     position: relative;
     font-family: monospace;
     font-size: 90px;
-    background-image: url(img.jpg);
+    background-image: url(../img/img.jpg);
 }
