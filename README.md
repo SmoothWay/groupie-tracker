@@ -2,6 +2,9 @@
 Groupie Trackers consists on receiving a given API and manipulate the data contained in it, in order to create a site, displaying the information.  
 Subject from [01 School](https://github.com/01-edu/public/tree/master/subjects/groupie-tracker)  
 
+<img width="800" src="./screenshot.png" />
+<img width="800" src="./screenshot2.png" />
+
 ## Usage: how to run?  
 Clone this repository to your local machine. `cd groupie-tracker` and type `go run ./cmd/web`. Or you can specify port with flag `-addr`.  
 Example: `go run ./cmd/web -addr=:4000`. After you can visit `http://localhost:$PORT`.
