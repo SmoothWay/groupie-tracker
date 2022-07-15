@@ -2,10 +2,10 @@
 
 {{define "title"}}Home{{end}}
 {{define "style"}}
-<link rel="stylesheet" href="../static/mainPage.css">
+<link rel="stylesheet" href="../static/css/mainPage.css">
 {{end}}
 {{define "body"}}
-    <div class="mainBlock">
+    <div class="block">
         {{range .Data.Artists}}
         <div class="Icon">
             <a href="artists?id={{.ID}}"><img src="{{.Image}}"></a> 

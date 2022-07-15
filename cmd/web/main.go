@@ -17,26 +17,25 @@ type application struct {
 }
 
 func main() {
-
 	addr := flag.String("addr", ":8080", "HTTP network address")
 
 	flag.Parse()
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 	errorLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 
-	tempalteCache, err := newTemplateCache("./ui/templates/")
+	templateCache, err := newTemplateCache("./ui/templates/")
 	if err != nil {
 		errorLog.Fatal(err)
 	}
 	app := &application{
 		errorLog:      errorLog,
 		infoLog:       infoLog,
-		templateCache: tempalteCache,
+		templateCache: templateCache,
 	}
 
 	infoLog.Printf("Starting server on http://localhost%s\n", *addr)
-	err = Unmarshal(groupie.UrlArt, &groupie.SearchArtist.Artists)
 
+	err = Unmarshal(groupie.UrlArt, &groupie.SearchArtist.Artists)
 	if err != nil {
 		errorLog.Fatal(err)
 	}

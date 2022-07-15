@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url(../img/img.jpg);
+    background-size: auto;
+    margin: 0;
+}
+
+p {
+    font-size: 133%;
+    font-weight: bold;
+}
+
+section {
+    margin-top: 54px;
+    margin-bottom: 54px;
+    min-height: calc(100vh - 345px);
+    overflow: auto;
+}
+
+.head {
+    background: linear-gradient(3.2deg, #9d0000, #00aa9c, #769917);
+    width: 800px;
+    height: 300px;
+    display: flex;
+    margin: auto;
+    padding: auto ;
+    border: 2px solid rgb(69, 63, 75);
+    border-radius: 15px;
+    color: rgb(5, 6, 49)
+}
+
+.Icon {
+    background:linear-gradient( 53.2deg, rgb(73, 20, 91) 26.8%, rgba(187,19,19,0.65) 64% );
+    width: 269px;
+    display: inline-block;
+    text-align: center;
+    margin: 19px;
+    padding: 5px ;
+    border: 7px solid rgba(251, 213, 10, 0.58);
+    border-radius: 15px 
+}
+
+.block {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(255, 255, 255);
+}
+
+.artblock {
+    justify-content: center;
+    display: block;
+    position:relative
+}
+
+.artName {
+    margin: auto;
+    font-size: 300%;
+    padding-left: 3%;
+    font-family: 'Times New Roman, serif"';
+}
+
+.desc {
+    background:linear-gradient( 53.2deg, rgb(73, 20, 91) 28.8%, rgba(187,19,19,0.65) 55% );
+    width: 800px;
+    height: fit-content;
+    /* display: block; */
+    text-align: center;
+    margin: auto;
+    border: 2px solid rgb(69, 63, 75);
+    border-radius: 15px;
+    color: white;
+}
+
+.p{
+    font-size: 165%;
+    font-family: 'Kalam', cursive;
+    font-family: 'Yellowtail', cursive;
+    font-weight: bold;
+    background-color:rgb(33, 30, 68)
+}
+
+#homePage img:nth-child(1){
+    margin-top: 0px;
+    margin-left: 15px;
+    max-width: 150px;
+    height: auto;
+    opacity: 0.8;
+    overflow:hidden;
+}
+
+footer {
+    position: fixed;
+    margin-top: 3%;
+    border-top: 1px solid #E4E5E7;
+    padding-top: 17px;
+    padding-bottom: 15px;
+    background: #19475e;
+    height: 60px;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
+}
+footer a {
+    color: #ff8800;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #c29127;
+    text-decoration: underline;
+}
+
+@media (max-width: 825px){
+    p{
+        font-size: 15px;
+    }
+    .artName{
+        font-size: 30px;
+        margin: auto;
+    }
+    .head{
+        font-size: 30px;
+        width: 330px;;
+        height: fit-content;
+    }
+    .p{
+        font-size: 15px;
+    }
+    .desc{
+        font-size: 15px;
+        width: 330px;
+        height: fit-content;
+        padding-bottom: 5px;
+    }
+    img{
+        width: 150px;
+        height: 150px;
+    }
+    footer{
+        font-size: 12px;
+        height: 30px;
+        padding-top: 10px;
+    }
+}

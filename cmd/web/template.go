@@ -14,7 +14,6 @@ type templateData struct {
 }
 
 func newTemplateCache(dir string) (map[string]*template.Template, error) {
-
 	cache := map[string]*template.Template{}
 
 	pages, err := filepath.Glob(filepath.Join(dir, "*-page.html"))
