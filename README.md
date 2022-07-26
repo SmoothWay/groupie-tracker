@@ -6,8 +6,20 @@ Subject from [01 School](https://github.com/01-edu/public/tree/master/subjects/g
 <img width="800" src="./screenshot2.png" />
 
 ## Usage: how to run?  
-Clone this repository to your local machine. `cd groupie-tracker` and type `go run ./cmd/web`. Or you can specify port with flag `-addr`.  
-Example: `go run ./cmd/web -addr=:4000`. After you can visit `http://localhost:$PORT`.
+Clone this repository to your local machine. 
+```shell
+cd groupie-tracker
+
+``` 
+and type 
+
+```shell
+go run ./cmd/web```  
+Or you can specify port with flag `-addr`.  
+Example: 
+```shell 
+go run ./cmd/web -addr=:4000```  
+After you can visit `http://localhost:$PORT`.
 
 ## Implementation  
 There is [API](https://groupietrackers.herokuapp.com/api), which is parsed with json.Unmarshal and stored in Struct variable. Then content off that struct 
