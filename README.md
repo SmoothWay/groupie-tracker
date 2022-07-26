@@ -18,7 +18,8 @@ go run ./cmd/web```
 Or you can specify port with flag `-addr`.  
 Example: 
 ```shell 
-go run ./cmd/web -addr=:4000```  
+go run ./cmd/web -addr=:4000
+```  
 After you can visit `http://localhost:$PORT`.
 
 ## Implementation  
