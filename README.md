@@ -14,7 +14,8 @@ cd groupie-tracker
 and type 
 
 ```shell
-go run ./cmd/web```  
+go run ./cmd/web
+```  
 Or you can specify port with flag `-addr`.  
 Example: 
 ```shell 
